@@ -1,0 +1,111 @@
+/**
+ * @fileOverview Variables contains variables
+ * @name Variables
+ * @author hdoan, mdaveshah, ziliu
+ * @tested browsers FF 12, Chrome 18, Safari 5 on Mac
+ */
+/* Font sizes */
+/* Inputs */
+/** old styles **/
+/****************/
+/* Colors */
+/* button colors */
+/* New color variables from Adam Dustan's Patterns sheet: https://ebay.box.com/s/apis0xukrp25jzdvjyky */
+/* engagement module colors, named via http://chir.ag/projects/name-that-color */
+/* info / warning icon colors */
+/* generic colors for colors except text like box-border, shadow, background */
+/* card colors */
+/* textColor for all the colors of text */
+/* font weights */
+/* Z-index list */
+/* user for a bird's eye view of components based on z-axis */
+/* for example, if you want to put a button in header, just assign z-index of that button to @zindexHeader */
+/* these will overwrite the bootstrap pre defined variables */
+/* TODO: check the clean the non-needed modal styles in bootstrap */
+/* the same as bootstrap one, just overwrite */
+/* Setting for Sidepanel */
+/* This is not used by all side panels, only for the default one */
+/* what about larger phones like gs3? what about phablets like the note?
+/* responsive breakpoints */
+/* borders */
+/* Image Paths */
+/* Image URIs */
+/* Navigation */
+/* Activity */
+/* send money */
+/* data uri for notification */
+/* wallet */
+/* transfer landing page */
+/* shop static landing page */
+/* feedback icon */
+#addressMainWrapper.settings {
+  padding-top: 1.5em;
+}
+#addressMainWrapper .container.wrapper {
+  background: none;
+  max-width: 960px;
+  margin-top: 0;
+  padding-top: 0;
+}
+#addressMainWrapper .addresses {
+  margin: 0;
+}
+#addressMainWrapper .addresses .modify,
+#addressMainWrapper .addresses .links {
+  position: relative;
+  text-align: inherit;
+}
+#addressMainWrapper .addresses .addressType a {
+  padding: 0 1em;
+  border-right: 1px solid #2c2e2f;
+}
+#addressMainWrapper .addresses .addressType a:first-child {
+  padding-left: 0;
+}
+#addressMainWrapper .addresses .addressType a:last-child {
+  border: none;
+}
+#addressMainWrapper .addresses .addressType .businessAddressLeft {
+  padding-right: 1em;
+  border-right: 1px solid #2c2e2f;
+}
+#addressMainWrapper .addresses .addressType .businessAddressRight {
+  padding-left: 1em;
+}
+#addressMainWrapper .addresses ul {
+  margin-left: 0;
+}
+#addressMainWrapper .addressWrapper {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  position: relative;
+}
+@media (max-width: 768px) {
+  #addressMainWrapper .addressWrapper {
+    margin-bottom: 2em;
+  }
+}
+#addressMainWrapper .addressWrapper .confidential {
+  width: 95%;
+}
+#addressMainWrapper .addressWrapper .undo {
+  display: none;
+}
+#addressMainWrapper .addressWrapper.undo .address {
+  display: none;
+}
+#addressMainWrapper .addressWrapper.undo .undo {
+  display: block;
+}
+#addressMainWrapper ul.addresses li {
+  border-bottom: 1px solid #ddd;
+}
+#addressMainWrapper ul.addresses li:last-child {
+  border: none;
+}
+.modal .addressEntry .postalCode {
+  width: 180px;
+}
+.modal .addressEntry .selectDropdown select {
+  color: #666;
+}

@@ -1,0 +1,2559 @@
+/* Settings */
+/* 8ballUI/public/css/_views/settings/index.less */
+/**
+ * @fileOverview Variables contains variables
+ * @name Variables
+ * @author hdoan, mdaveshah, ziliu
+ * @tested browsers FF 12, Chrome 18, Safari 5 on Mac
+ */
+/* Font sizes */
+/* Inputs */
+/** old styles **/
+/****************/
+/* Colors */
+/* button colors */
+/* New color variables from Adam Dustan's Patterns sheet: https://ebay.box.com/s/apis0xukrp25jzdvjyky */
+/* engagement module colors, named via http://chir.ag/projects/name-that-color */
+/* info / warning icon colors */
+/* generic colors for colors except text like box-border, shadow, background */
+/* card colors */
+/* textColor for all the colors of text */
+/* font weights */
+/* Z-index list */
+/* user for a bird's eye view of components based on z-axis */
+/* for example, if you want to put a button in header, just assign z-index of that button to @zindexHeader */
+/* these will overwrite the bootstrap pre defined variables */
+/* TODO: check the clean the non-needed modal styles in bootstrap */
+/* the same as bootstrap one, just overwrite */
+/* Setting for Sidepanel */
+/* This is not used by all side panels, only for the default one */
+/* what about larger phones like gs3? what about phablets like the note?
+/* responsive breakpoints */
+/* borders */
+/* Image Paths */
+/* Image URIs */
+/* Navigation */
+/* Activity */
+/* send money */
+/* data uri for notification */
+/* wallet */
+/* transfer landing page */
+/* shop static landing page */
+/* feedback icon */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+/* mixins for pp+ hawk styling*/
+/**
+ * @fileOverview Mixins contains mixins
+ * @name Mixins
+ * @author hdoan, mdaveshah
+ * @tested browsers FF 12, Chrome 18, Safari 5 on Mac
+ * Please do not modify Mixins to add IE related styles.
+ */
+/* overflow auto + native mobile scrollage */
+.overflow-auto {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/**
+ *  Multi-line truncation utilizing overflow:hidden and specified height of content
+ *  http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/
+ *
+ *  @height - height of content to cut off
+ *  @lineheight - spacing between lines
+ *  @ellipsiswidth - width of ellipsis area
+ */
+/**
+ *	Vertical separator with radial box shadow right
+ *	@width - width of vertical separator
+ *	@height1 - height of first darker box shadow
+ *	@height2 - height of second lighter box shadow (taller than first height)
+ *	@top1 - top position of first box shadow
+ *	@top2 - top position of second box shadow
+ *	@right - right position of separator
+ *	@z - z-index of separator
+ *	@borderRadius - how radial the box shadow is
+ */
+/**
+ *	Horizontal separator with radial box shadow down
+ *	@height - height of horizontal separator
+ *	@width1 - width of first darker box shadow
+ *	@width2 - width of second lighter box shadow (longer than first width)
+ *	@left1 - left position of first box shadow
+ *	@left2 - left position of second box shadow
+ *	@bottom - bottom position of separator
+ *	@z - z-index of separator
+ *	@borderRadius - how radial the box shadow is
+ */
+/* This mixin is to add a pointer to a dropdown */
+/* mixin for creating a triangle */
+/* Mixin for bubbles */
+/* mixin for creating carets bubbles with a border */
+/* mixin for the launcher style containers */
+.container {
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #f0efef;
+  background-image: -moz-linear-gradient(top, #f5f5f5, #e8e7e7);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#e8e7e7));
+  background-image: -webkit-linear-gradient(top, #f5f5f5, #e8e7e7);
+  background-image: -o-linear-gradient(top, #f5f5f5, #e8e7e7);
+  background-image: linear-gradient(to bottom, #f5f5f5, #e8e7e7);
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e7e7 100%);
+  background-image: -o-linear-gradient(top, #f5f5f5 0%, #e8e7e7 100%);
+  background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e7e7 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e7e7', GradientType=0);
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+/* mixins for creating caret for customSelectBtn */
+/*  START SPINNER  */
+/* DEFAULT USAGE: add .hasSpinner classes (in app.less) to the elements that we want to have an overlay and spinner graphic on top of */
+/* Applies to Modals and other DIV elements: Apply this mixin selectively to other CSS properties to avoid duplication of CSS code */
+/* Just use .spinner() to apply spinner, or along with .overlay() to add overlay behind spinner and block the user interaction on the DIV */
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-moz-keyframes rotation {
+  from {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/*  END SPINNER  */
+/* mixin to create flat white button (iOS7 style) */
+.flatBtn {
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  background: #FFFFFF;
+  -moz-box-shadow: 0 1px 3px #ccc;
+  -webkit-box-shadow: 0 1px 3px #ccc;
+  box-shadow: 0 1px 3px #ccc;
+  background-color: #faf9f9;
+  background-image: -moz-linear-gradient(top, #fffefe, #f3f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fffefe), to(#f3f2f2));
+  background-image: -webkit-linear-gradient(top, #fffefe, #f3f2f2);
+  background-image: -o-linear-gradient(top, #fffefe, #f3f2f2);
+  background-image: linear-gradient(to bottom, #fffefe, #f3f2f2);
+  background-image: -webkit-linear-gradient(top, #fffefe 0%, #f3f2f2 100%);
+  background-image: -o-linear-gradient(top, #fffefe 0%, #f3f2f2 100%);
+  background-image: linear-gradient(to bottom, #fffefe 0%, #f3f2f2 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffffefe', endColorstr='#fff3f2f2', GradientType=0);
+}
+/*@brand-primary;*/
+/*darken(@link-color, 15%);*/
+/**
+ * DO NOT EDIT THIS FILE AS IT'S GENERATED CODE.
+ * UED: cgrigson, adustin, nvandewater
+ * UIE: jlowery
+ * Note: If modifications are needed, don't modify this file! Either override or make a PR to:
+ * https://github.paypal.com/jlowery/paypal-vxpattern-lib
+*/
+/* Reversed text and icons, module background color. */
+/* Background, info alert background. */
+/* Disabled field stroke and label. */
+/* Secondary buttons disabled. */
+/* Secondary text on dark backgrounds, strokes. */
+/* Secondary buttons. */
+/* Secondary text on white. */
+/* Hover, hit and active for secondary buttons. */
+/* 'Slate', primary text, fundamental icons. */
+/* Critical alert icon and stroke, minus sign on transactions. */
+/* Warning alert on dark background. */
+/* Critical alert background. */
+/* Warning alert icon and stroke, action icon on transactions. */
+/* Warning alert background. */
+/* Success alert icon and stroke, plus sign on transactions. */
+/* Success alert on dark background. */
+/* Success alert background. */
+/* Help alert background. */
+/* Color of the 'Pay' part of the PayPal logo. */
+/* Color of the 'Pal' part of the PayPal logo. Primary buttons, engagement module background. */
+/* Disabled primary buttons. */
+/* Hover, hit, active for primary buttons. */
+/* Text links, accessibility, help/tooltip icon. */
+/* Account completion background. */
+/* Help/tooltip icon on dark background. */
+/* Help alert background. */
+/* 25% Lighter PalBlue color. Screen lightens without desaturating. Unfilled profile progress meter. */
+/* 60% Lighter PalBlue color. Screen lightens without desaturating. Engagement module icon backgrounds. */
+/* 20% Lighter Dark Blue color. Screen lightens without desaturating. Account status icon backgrounds. */
+/* Overpanel */
+.overpanelOpen {
+  overflow: hidden;
+}
+.theoverpanel {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  background: #FFFFFF;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.theoverpanel h2 {
+  margin-top: 0;
+  margin-bottom: 22px;
+  font-size: 1.8285714285714285em;
+  font-size: 2rem;
+  line-height: 1.09375em;
+}
+.overpanel-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.overpanelOpen .footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1060;
+  background: #FFFFFF;
+  -webkit-animation-name: fadeInUpBig;
+  -moz-animation-name: fadeInUpBig;
+  -o-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+}
+.overpanelOpen .footer .navbar-inner {
+  background: #FFFFFF;
+  border: 0 none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.overpanelOpen .footer .brand {
+  display: block;
+  float: left;
+  margin: 1em 1em 0.5em;
+}
+.overpanelOpen .footer .navbar-content {
+  float: right;
+  margin: 1em 1em 0.5em;
+}
+.overpanelOpen .footer .navbar-content .inline {
+  display: inline;
+  font-size: 0.8571428571428572em;
+  font-size: 0.9375rem;
+  line-height: 1.4666666666666666em;
+}
+.overpanelOpen .footer .navbar-content .inline li {
+  margin-right: 0;
+}
+.overpanelOpen .footer .navbar-content .inline li:after {
+  content: "\7c";
+  font-weight: bold;
+  color: #999;
+  margin-left: 10px;
+}
+.overpanelOpen .footer .navbar-content .inline li:last-child:after {
+  display: none;
+}
+.overpanelOpen .footer .navbar-content .inline li a {
+  color: #999;
+}
+.overpanelOpen .footer .classicLink,
+.overpanelOpen .footer .siteFeedback,
+.overpanelOpen .footer .copyright,
+.overpanelOpen .footer .footerDisclaimer {
+  display: none;
+}
+/**
+ * Overqualifying this for now since it clashes with
+ * styles declared in overpanel.less
+ *
+ * Once we move to a single overpanel solution, we can
+ * remove .theoverpanel from this rule
+ */
+.theoverpanel .dismiss {
+  margin-left: 585px;
+  position: absolute;
+  top: 0;
+  padding: 15px;
+  left: 50%;
+  z-index: 2;
+}
+.theoverpanel .dismiss .icon-close-small {
+  color: #666;
+}
+@media (max-width: 1170px) {
+  .theoverpanel .dismiss {
+    margin-left: 0;
+    left: auto;
+    right: 0;
+  }
+}
+.columnSpan4 .overpanel-content {
+  position: relative;
+  min-height: 1px;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin: 0 auto;
+  float: none;
+}
+@media (min-width: 992px) {
+  .columnSpan4 .overpanel-content {
+    float: left;
+    width: 37.5%;
+  }
+}
+.columnSpan4 .overpanel-content .btn {
+  width: 100%;
+}
+.columnSpan5 .overpanel-content {
+  position: relative;
+  min-height: 1px;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin: 0 auto;
+  float: none;
+}
+@media (min-width: 992px) {
+  .columnSpan5 .overpanel-content {
+    float: left;
+    width: 41.66666667%;
+  }
+}
+.columnSpan5 .overpanel-content .btn {
+  width: 100%;
+}
+#overpanel .overpanel-small-content {
+  position: relative;
+  width: 396px;
+  height: initial;
+  margin: 40px auto;
+  padding: 74px 100px 20px 100px;
+  border: 1px solid #e1e1e1;
+  box-sizing: content-box;
+}
+#overpanel .overpanel-small-content .dismiss,
+#overpanel .overpanel-small-content .close {
+  margin-left: 0px;
+  position: absolute;
+  top: 0;
+  padding: 15px;
+  /* left: 0%; */
+  z-index: 2;
+  margin-right: 10px;
+  left: initial;
+  right: 0%;
+}
+.overpanel-content {
+  width: 696px;
+  height: 100%;
+  /* Top space in overpanel should be 114px for desktop by Adam Dustan */
+  padding-top: 114px;
+  margin: 0 auto;
+  position: relative;
+}
+.menu {
+  padding-right: 2em;
+}
+.menu .image,
+.menu .btn,
+.menu a,
+.menu .toggle {
+  width: 100%;
+  margin-bottom: 0.588em;
+}
+.menu .image {
+  max-width: 24em;
+  height: 13.5em;
+  padding: 0.5em;
+  margin: 0 auto 1em;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+}
+.overpanel-body {
+  margin-bottom: 68px;
+  z-index: 0;
+  background: #FFFFFF;
+}
+.overpanel-body dl {
+  margin: 0 0 1em;
+  position: relative;
+}
+.overpanel-body dt {
+  width: 100%;
+  margin: 0;
+  font-size: 0.9142857142857143em;
+  font-size: 1rem;
+  line-height: 1.875em;
+  font-weight: 600;
+  color: #333;
+}
+.overpanel-body dd {
+  margin: 0 0 8px;
+  font-size: 0.9142857142857143em;
+  font-size: 1rem;
+  line-height: 1.3125em;
+  font-weight: 300;
+}
+.overpanel-body dd span {
+  color: #666;
+  margin-right: 10px;
+}
+.overpanel-logo {
+  display: none;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  bottom: 1em;
+  z-index: -1;
+  /**
+	 * not using the v2 sprite image here because the moneypak logo pushes the width of the
+	 * image and is not the same size as the others. This makes centering the image difficult
+	 */
+  background: url("https://www.paypalobjects.com/webstatic/sprite/sprite_logos_wallet_2x.png") no-repeat center 5px;
+  background-size: 35px;
+}
+.overpanel-subheader {
+  width: 100%;
+  margin: 0;
+  font-size: 0.9142857142857143em;
+  font-size: 1rem;
+  line-height: 1.875em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: -12px;
+  font-family: 'HelveticaNeue', 'Helvetica Neue', helvetica, Arial, sans-serif;
+}
+@media (max-width: 768px) {
+  #overpanel .overpanel-small-content {
+    padding: 0px;
+    border: none;
+    width: 100%;
+  }
+  #overpanel .overpanel-small-content > .close {
+    padding: 5px 15px 0 0;
+    margin-right: 0px;
+  }
+  .overpanel-content {
+    width: 100%;
+    padding-top: 3em;
+  }
+  .overpanel-header {
+    padding: 3em 3em 0;
+  }
+  .overpanel-body {
+    padding: 0 3em;
+  }
+  .columnSpan4 .overpanel-body,
+  .columnSpan5 .overpanel-body {
+    padding: 0;
+  }
+}
+@media (max-width: 640px) {
+  .overpanelOpen .footer {
+    display: none;
+  }
+  .overpanel-content {
+    /* Top space should be 64px on mobile by Adam Dustan */
+    padding-top: 64px;
+  }
+  .theoverpanel h2 {
+    font-size: 1.4285714285714288em;
+    font-size: 1.5625rem;
+    line-height: 0.84em;
+    line-height: 1.2em;
+    margin-top: 0;
+  }
+  .overpanel-header {
+    padding: 0 15px;
+  }
+  .overpanel-body {
+    padding: 0 15px;
+    margin-bottom: 2em;
+  }
+  .overpanel-logo {
+    position: relative;
+    z-index: 0;
+    display: inherit;
+  }
+  .overpanel-body.row-fluid > div:not(.btn-block) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .menu .image {
+    width: 20em;
+    height: 12em;
+  }
+}
+@media (max-width: 479px) {
+  #overpanel .overpanel-small-content {
+    padding: 0px;
+    border: none;
+    width: 100%;
+  }
+  #overpanel .overpanel-small-content > .close {
+    padding: 5px 15px 0 0;
+    margin-right: 0px;
+  }
+  .columnSpan4 .overpanel-content,
+  .columnSpan5 .overpanel-content {
+    width: 100%;
+  }
+  .columnSpan4 .overpanel-body,
+  .columnSpan5 .overpanel-body {
+    padding: 0 15px;
+  }
+}
+/**
+ * Temporary fixes for modals that should be styled as overpanels
+ * This should be removed once these get converted and make use
+ * of the actual overpanel module
+ */
+.paypalBalance .detailsHeader,
+.addFundsModal .detailsHeader,
+.withdrawFundsModal .detailsHeader,
+.paypalCredit .detailsHeader {
+  font-size: 1.8285714285714285em;
+  font-size: 2rem;
+  line-height: 1.09375em;
+  margin-bottom: 0.7em;
+  font-weight: 300;
+}
+.paypalBalance .modalContent,
+.addFundsModal .modalContent,
+.withdrawFundsModal .modalContent,
+.paypalCredit .modalContent {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 696px;
+  padding: 5em 0;
+}
+.paypalBalance .modalContent .modal-header,
+.addFundsModal .modalContent .modal-header,
+.withdrawFundsModal .modalContent .modal-header,
+.paypalCredit .modalContent .modal-header {
+  margin: 0;
+  padding: 0;
+}
+.paypalBalance.modal .modal-body.body-default,
+.addFundsModal.modal .modal-body.body-default,
+.withdrawFundsModal.modal .modal-body.body-default,
+.paypalCredit.modal .modal-body.body-default {
+  width: 100%;
+}
+@media (max-width: 640px) {
+  #paypalBalance .detailsHeader,
+  #addFunds .detailsHeader,
+  #withdrawFunds .detailsHeader {
+    margin-bottom: 0.7em;
+    font-size: 1.8285714285714285em;
+    font-size: 2rem;
+    line-height: 1.09375em;
+  }
+  #paypalBalance .modalContent,
+  #addFunds .modalContent,
+  #withdrawFunds .modalContent {
+    margin-top: 0;
+  }
+  #paypalBalance .modalContent .modal-header,
+  #addFunds .modalContent .modal-header,
+  #withdrawFunds .modalContent .modal-header {
+    margin: 0;
+    padding: 8px 8px 0;
+    background-color: transparent;
+    text-align: left;
+    border-bottom: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  #paypalBalance .modalContent .row-fluid .menu,
+  #addFunds .modalContent .row-fluid .menu,
+  #withdrawFunds .modalContent .row-fluid .menu {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+.modal.fade .modal-dialog {
+  -moz-transform: translate3d(0, 2000px, 0);
+  -ms-transform: translate3d(0, 2000px, 0);
+  -o-transform: translate3d(0, 2000px, 0);
+  -webkit-transform: translate3d(0, 2000px, 0);
+  transform: translate3d(0, 2000px, 0);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  -moz-transition: -moz-transform 0.5s ease-out;
+  -ms-transition: -ms-transform 0.5s ease-out;
+  -o-transition: -o-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+}
+.modal.in .modal-dialog {
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.modal .button {
+  margin: 4em 0 2em 0;
+}
+.modal-dialog {
+  margin: 0 auto;
+  height: 100%;
+  width: 620px;
+}
+.modal-dialog a.close {
+  font-size: 1.7em;
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 99;
+}
+.modal-dialog a.btn,
+.modal-dialog input.btn {
+  width: 100%;
+}
+.pix-warning {
+  height: 22.812rem;
+  width: 31.25rem;
+  top: 6.25rem;
+}
+.modal-content {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  padding: 120px;
+  min-height: 100%;
+}
+.modal-content .modalSubtitle {
+  font-size: 15px;
+  color: #7E7E7E;
+  margin: 0px 30px 20px 0;
+}
+.modal-content .modal-header {
+  margin-bottom: 60px;
+  padding: 0;
+  border-bottom: none;
+}
+.modal-content .modal-header h2 {
+  margin: 0px;
+}
+.modal-content .modal-body {
+  padding: 0px;
+}
+.modal-content .modal-body .remove-content {
+  text-align: center;
+  width: 350px;
+  margin: 0 auto;
+}
+.modal-content .modal-body .remove-content button {
+  margin: 1rem;
+  width: 60%;
+  min-width: 0;
+}
+.modal-content .modal-body .remove-content p {
+  word-break: break-word;
+  padding: 0rem 1.2rem 0rem 1.2rem;
+}
+.modal-content .modal-body .remove-content #cancel {
+  margin: 0.5rem 0 3rem 0;
+}
+.modal-content .modal-footer {
+  padding: 0px;
+  border-top: none;
+  text-align: left;
+}
+.modal-content .modal-footer button {
+  display: inline-block;
+  width: 100%;
+}
+.pix-content {
+  padding: 0rem;
+  border: 1px solid;
+  border-radius: 0.75rem;
+}
+.modal-logo {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 24px;
+  left: 0;
+  bottom: 30px;
+  background: url("https://www.paypalobjects.com/webstatic/sprite/sprite_logos_wallet_2x.png") no-repeat center 5px;
+  background-size: 35px;
+}
+@media (max-width: 768px) {
+  .modal-dialog {
+    width: 100%;
+  }
+  .modal-dialog .modal-content {
+    padding: 80px 50px;
+  }
+  .modal-dialog .pix-content {
+    padding: 0rem;
+  }
+  .modal-dialog a.close {
+    top: 15px;
+    right: 15px;
+  }
+  .pix-warning {
+    width: 31.25rem;
+  }
+}
+@media (max-width: 479px) {
+  .modal-dialog .modal-content {
+    padding: 80px 25px;
+  }
+  .modal-dialog .modal-content .modal-header h2 {
+    font-size: 1.4285714285714288em;
+    font-size: 1.5625rem;
+    line-height: 0.84em;
+    line-height: 1.2em;
+  }
+  .modal-dialog .modal-content .modal-body.row-fluid > div:not(.btn-block) {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .modal-dialog .pix-content {
+    padding: 0rem;
+  }
+  .pix-warning {
+    width: 100%;
+  }
+}
+.card {
+  width: 225px;
+  height: 140px;
+  padding: 0.5em;
+  border: 0 none;
+  position: relative;
+  color: #444;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  /* card color diagonal gradients */
+}
+.card:hover,
+.card:focus,
+.card:active {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #444;
+}
+.card.creditOrDebit {
+  color: #FFFFFF;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.card.gray {
+  background-color: #7f7f7f;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #555555, #898989 50%, #555555);
+  background-image: -webkit-linear-gradient(135deg, #555555, #898989 50%, #555555);
+  background-image: -o-linear-gradient(135deg, #555555, #898989 50%, #555555);
+  background-image: linear-gradient(135deg, #555555, #898989 50%, #555555);
+}
+.card.black {
+  background-color: #474a4c;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #2c2e2f, #4e5153 50%, #2c2e2f);
+  background-image: -webkit-linear-gradient(135deg, #2c2e2f, #4e5153 50%, #2c2e2f);
+  background-image: -o-linear-gradient(135deg, #2c2e2f, #4e5153 50%, #2c2e2f);
+  background-image: linear-gradient(135deg, #2c2e2f, #4e5153 50%, #2c2e2f);
+}
+.card.blue {
+  background-color: #306793;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #07467A, #3a6f99 50%, #07467A);
+  background-image: -webkit-linear-gradient(135deg, #07467A, #3a6f99 50%, #07467A);
+  background-image: -o-linear-gradient(135deg, #07467A, #3a6f99 50%, #07467A);
+  background-image: linear-gradient(135deg, #07467A, #3a6f99 50%, #07467A);
+}
+.card.red {
+  background-color: #c95151;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #BA1717, #cd6060 50%, #BA1717);
+  background-image: -webkit-linear-gradient(135deg, #BA1717, #cd6060 50%, #BA1717);
+  background-image: -o-linear-gradient(135deg, #BA1717, #cd6060 50%, #BA1717);
+  background-image: linear-gradient(135deg, #BA1717, #cd6060 50%, #BA1717);
+}
+.card.gold {
+  background-color: #d0a157;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #C88723, #d2a764 50%, #C88723);
+  background-image: -webkit-linear-gradient(135deg, #C88723, #d2a764 50%, #C88723);
+  background-image: -o-linear-gradient(135deg, #C88723, #d2a764 50%, #C88723);
+  background-image: linear-gradient(135deg, #C88723, #d2a764 50%, #C88723);
+}
+.card.green {
+  background-color: #4f9c50;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #317B31, #57a458 50%, #317B31);
+  background-image: -webkit-linear-gradient(135deg, #317B31, #57a458 50%, #317B31);
+  background-image: -o-linear-gradient(135deg, #317B31, #57a458 50%, #317B31);
+  background-image: linear-gradient(135deg, #317B31, #57a458 50%, #317B31);
+}
+.creditOrDebit {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.creditOrDebit:after {
+  content: "";
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+.creditOrDebit.visa:after {
+  background: url("https://www.paypalobjects.com/webstatic/logo/cards/visa_2x.png") no-repeat;
+  background-size: 100%;
+}
+.creditOrDebit.visa .cardType {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+.creditOrDebit.mastercard:after {
+  background: url("https://www.paypalobjects.com/webstatic/logo/cards/mastercard_2x.png") no-repeat;
+  background-size: 100%;
+}
+.creditOrDebit.mastercard .cardType {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+.creditOrDebit.amex:after {
+  width: 20%;
+  height: 35%;
+  background: url("https://www.paypalobjects.com/webstatic/logo/cards/amex_2x.png") no-repeat;
+  background-size: 100%;
+}
+.creditOrDebit.amex .cardType {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+.creditOrDebit.discover:after {
+  background: url("https://www.paypalobjects.com/webstatic/logo/cards/discover_2x.png") no-repeat;
+  background-size: 100%;
+}
+.creditOrDebit.discover .cardType {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+.creditOrDebit.maestro:after {
+  background: url("https://www.paypalobjects.com/webstatic/logo/cards/maestro_2x.png") no-repeat;
+  background-size: 100%;
+}
+.creditOrDebit.maestro .cardType {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+.creditOrDebit .ribbon {
+  top: 72%;
+}
+.creditOrDebit .cardName {
+  padding-top: 1em;
+}
+.creditOrDebit .lastDigits {
+  width: 100%;
+  padding: 26% 0 24%;
+  display: inline-block;
+  font-size: 1.0285714285714287em;
+  font-size: 1.125rem;
+  line-height: 1.1666666666666667em;
+  text-align: center;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.creditOrDebit .cardType {
+  position: absolute;
+  bottom: 1em;
+  right: 0.5em;
+}
+.emailpanel .ppCheckbox label.hideLabel {
+  cursor: text;
+}
+.emailpanel .ppCheckbox label:hover .icon.icon-checkmark-small:before {
+  border: none;
+}
+.emailpanel .ppCheckbox label:hover .icon:before {
+  border: 1px solid #0070BA;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ppCheckbox {
+  width: 100%;
+  position: relative;
+}
+.ppCheckbox.hide {
+  display: none;
+}
+.ppCheckbox input {
+  opacity: 0;
+}
+.ppCheckbox input:focus + label {
+  outline: 1px dotted #999;
+}
+.ppCheckbox label {
+  margin-top: -35px;
+  margin-bottom: 0;
+  padding: 10px 0;
+  cursor: pointer;
+  line-height: 200%;
+}
+.ppCheckbox label .icon:before {
+  padding: 0.5px 10.25px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  content: '';
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #FFFFFF;
+}
+.ppCheckbox label .icon-checkmark-small:before {
+  content: "\e014";
+  padding: 0 3px 4px 4px;
+  border: none;
+  background-color: #0D62B3;
+}
+.ppCheckbox label.hideLabel .icon {
+  display: none;
+}
+.ppCheckbox.radio .icon:before {
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  font-weight: normal;
+}
+.captchaPlaceholder {
+  margin-top: 35px;
+}
+.captchaPlaceholder .captcha-request {
+  font-size: 1.2em;
+}
+.captchaPlaceholder .textInput {
+  width: 200px;
+  margin-bottom: 0;
+}
+.captchaPlaceholder input {
+  margin-bottom: 0;
+  border-radius: 5px 0 0 5px;
+}
+.captchaPlaceholder .btn {
+  height: 3em;
+  width: 45px;
+  min-width: 45px;
+  margin: 9px 0;
+  border-radius: 0;
+  background-image: url('https://www.paypalobjects.com/webstatic/mktg/consumer/onboarding/ui-sprite.png');
+  text-indent: -9999px;
+}
+.captchaPlaceholder .refresh {
+  background-position: -27px -3386px;
+}
+.captchaPlaceholder .audio {
+  border-radius: 0 5px 5px 0;
+  background-position: -27px -3486px;
+}
+.floating-feedback {
+  position: fixed;
+  right: 2.85em;
+  top: 400px;
+  z-index: 1000;
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.floating-feedback a {
+  margin-left: -4.25em;
+  display: inline-block;
+  position: fixed;
+  border-radius: 5px 5px 0 0;
+  white-space: nowrap;
+  -moz-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform: rotate(-90deg);
+}
+/* Custom radio button */
+.radio {
+  padding-left: 28px;
+}
+.radio input + span {
+  position: relative;
+}
+.radio input + span:after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: -2px;
+  left: -25px;
+  border: 1px solid #9DA3A6;
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+}
+.radio input:checked + span:before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 1px;
+  left: -22px;
+  background-color: #0070BA;
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+}
+.radio input:hover + span:after {
+  border-color: #0070BA;
+}
+/* mixin for Select element - Dropdowns
+*
+* We style native select element on web and it uses native element on other devices
+* HTML Format to use for select element:
+* <div class="selectDropdown">
+* <label for="selectID" class="accessAid" id="forSelectID">Select Label</label>
+* <select id="selectID" name="selectID">
+* <option value="">Option 1</option>
+* <option value="2">Option 2</option>
+* </select>
+* </div>
+*
+* @param width - defines the width of the selectDropdown on form
+* @param rightPadding - this is so that any long selected text does not bork up the error visual styles.
+* Ideally this value should be calculated for each dropdown with a different width
+* than the defualt 210px so that the text entered stops showing right before
+* the error icons
+*/
+/* red border - client side error */
+.hasError .selectDropdown,
+.hasError .selectDropdown:hover,
+.hasError .selectDropdown:focus,
+.hasError .selectDropdown.hovered {
+  border-color: #de746a;
+  -moz-box-shadow: 0 0 5px rgba(220, 99, 88, 0.6);
+  -webkit-box-shadow: 0 0 5px rgba(220, 99, 88, 0.6);
+  box-shadow: 0 0 5px rgba(220, 99, 88, 0.6);
+}
+.ppc-heading {
+  text-align: center;
+  line-height: 45px;
+}
+.ppc-buttons {
+  margin-bottom: 10px;
+}
+.ppc-message {
+  margin-bottom: 37px;
+  color: #777777;
+  text-align: center;
+}
+.ppc_info_container {
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+}
+.ppc_info {
+  margin-left: 27px;
+  color: #777777;
+}
+.ppc_icon_container {
+  padding-left: 27px;
+}
+.ppc_message_icon {
+  margin-left: -30px;
+  color: #0070ba;
+}
+#ppc_modal {
+  height: 100%;
+}
+#ppc_modal .modal-header {
+  margin-bottom: 23px;
+}
+.ppc-confirmation {
+  font-size: 15px;
+  margin-bottom: 25px;
+  border: 1px solid #00CF92;
+  border-radius: 7px;
+  padding: 5px 5px;
+  display: none;
+}
+.ppc-confirmation-icon {
+  color: #00CF92;
+  padding-right: 5px;
+  font-weight: bold;
+}
+.ppc-confirmation-icon.ppc-confirmation-icon:before {
+  vertical-align: 0px;
+}
+#options ul li.timezone,
+#options ul li.timezoneDropdown,
+#options ul li.language,
+#options ul li.languageDropdown,
+#options ul li.timezoneContent {
+  border-bottom: none;
+  cursor: auto;
+}
+.settingsSpinner:before {
+  content: "";
+  height: 55px;
+  width: 55px;
+  margin: -15px auto auto -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #2180c0 rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2);
+  -webkit-animation: rotation 0.7s infinite linear;
+  -moz-animation: rotation 0.7s infinite linear;
+  -ms-animation: rotation 0.7s infinite linear;
+  animation: rotation 0.7s infinite linear;
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+}
+.settingsSpinner:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #FFFFFF;
+  opacity: 0.6;
+  z-index: 5;
+  overflow: auto;
+}
+a.btn:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus {
+  text-decoration: underline;
+}
+.settings {
+  font-family: 'HelveticaNeue', 'Helvetica Neue', arial, helvetica, sans-serif;
+}
+.settings .col-xs-1,
+.settings .col-sm-1,
+.settings .col-md-1,
+.settings .col-lg-1,
+.settings .col-xs-2,
+.settings .col-sm-2,
+.settings .col-md-2,
+.settings .col-lg-2,
+.settings .col-xs-3,
+.settings .col-sm-3,
+.settings .col-md-3,
+.settings .col-lg-3,
+.settings .col-xs-4,
+.settings .col-sm-4,
+.settings .col-md-4,
+.settings .col-lg-4,
+.settings .col-xs-5,
+.settings .col-sm-5,
+.settings .col-md-5,
+.settings .col-lg-5,
+.settings .col-xs-6,
+.settings .col-sm-6,
+.settings .col-md-6,
+.settings .col-lg-6,
+.settings .col-xs-7,
+.settings .col-sm-7,
+.settings .col-md-7,
+.settings .col-lg-7,
+.settings .col-xs-8,
+.settings .col-sm-8,
+.settings .col-md-8,
+.settings .col-lg-8,
+.settings .col-xs-9,
+.settings .col-sm-9,
+.settings .col-md-9,
+.settings .col-lg-9,
+.settings .col-xs-10,
+.settings .col-sm-10,
+.settings .col-md-10,
+.settings .col-lg-10,
+.settings .col-xs-11,
+.settings .col-sm-11,
+.settings .col-md-11,
+.settings .col-lg-11,
+.settings .col-xs-12,
+.settings .col-sm-12,
+.settings .col-md-12,
+.settings .col-lg-12 {
+  padding-left: 0;
+}
+.settings .container .alertMsg p {
+  margin: 0 0 10px;
+}
+.settings .section {
+  padding-left: 10px;
+}
+.settings .row {
+  margin: 0;
+}
+.settings .nav {
+  background: #1A2937;
+}
+.settings .nav.isBusinessUser {
+  margin-bottom: 25px;
+}
+.settings .nav ul {
+  line-height: 3.5em;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+.settings .nav li {
+  padding: 0 2em;
+  display: inline-block;
+  float: none;
+  line-height: 2.5em;
+  border-right: 1px solid #666;
+}
+.settings .nav li:first-child {
+  padding-left: 0;
+}
+.settings .nav li:last-child {
+  border: none;
+}
+.settings .nav li.active a {
+  color: white;
+}
+.settings .nav a {
+  color: #999;
+  text-decoration: none;
+}
+.settings .nav a:hover,
+.settings .nav a:focus {
+  color: white;
+}
+.settings .nav a:focus {
+  outline: thin dotted white;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: 7px;
+}
+.settings h2.x-small {
+  font-weight: bold;
+}
+.settings a.plus {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  line-height: 1em;
+  padding: 5px 15px;
+  color: #2c2e2f;
+  font-size: 2.5em;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.settings a.plus:hover {
+  text-decoration: none;
+}
+.settings .status {
+  color: #3ea134;
+}
+.settings .stage {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.settings .stage .panel {
+  display: none;
+}
+.settings .stage .panel.active {
+  display: block;
+}
+.settings .pixoverlay {
+  position: absolute;
+  top: 0;
+  background: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+.settings .status {
+  color: #666;
+}
+.settings .account .container,
+.settings .security .container,
+.settings .wallet .container {
+  background: #FFFFFF;
+  width: auto;
+}
+.settings li {
+  cursor: pointer;
+  list-style-type: none;
+}
+.settings .new {
+  -webkit-animation: fadeIn 1000ms 0s ease;
+  -moz-animation: fadeIn 1000ms 0s ease;
+  -ms-animation: fadeIn 1000ms 0s ease;
+  animation: fadeIn 1000ms 0s ease;
+}
+.settings .container {
+  padding: 1.5em 2.5em;
+  margin-top: 2em;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.settings .container.address {
+  height: 15em;
+}
+.settings .container.address .nonPrimaryAddressWrapper {
+  padding-left: 7em;
+}
+.settings .container h2 {
+  color: inherit;
+  margin-bottom: 0.75em;
+}
+.settings .container ul.picker {
+  height: 3em;
+}
+.settings .container ul.picker p {
+  line-height: inherit;
+}
+.settings .container li {
+  margin-left: 0;
+  padding-left: 0;
+  float: none;
+  line-height: 1.5em;
+}
+.settings .container li:first-child {
+  padding-left: 0;
+}
+.settings .container p {
+  margin-bottom: 0;
+  line-height: 1.5em;
+}
+.settings .container p.x-small {
+  letter-spacing: normal;
+  padding-bottom: 0.5em;
+}
+.settings .container p.modify {
+  position: absolute;
+}
+.settings .container .type {
+  font-weight: bold;
+}
+.settings .container .modify,
+.settings .container .links {
+  text-align: right;
+}
+.settings .container .links {
+  text-align: right;
+}
+.settings .container .links a {
+  padding: 0 0.5em;
+  border-right: 1px solid #2c2e2f;
+}
+.settings .container .links a:first-child {
+  padding-left: 0;
+}
+.settings .container .links a:last-child {
+  border: none;
+}
+.settings .container-email {
+  background: none;
+}
+.settings .container-payment-settings li {
+  padding: 10px 0;
+}
+.settings .container-payment-settings .link {
+  padding: 10px 0;
+}
+.settings .nativeDropdown.lap {
+  margin: 0;
+}
+.settings .entryMode {
+  width: 30%;
+  background: none repeat scroll 0 0 padding-box #fff;
+  border-color: #e5e5e5 #d9d9d9 #ccc;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 3px 15px rgba(148, 148, 148, 0.8);
+  padding: 20px;
+}
+.settings .innerCircle {
+  width: 6em;
+  height: 6em;
+  margin: 2em 2em 2em 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.settings .icon {
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.settings .icon.icon-profile-add-large {
+  left: -3px;
+}
+.settings ul.lined li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.settings ul.lined li:first-child {
+  padding-top: 0;
+}
+.settings ul.lined li:last-child {
+  border: none;
+}
+.settings .security .container {
+  height: 30em;
+  margin-top: 0;
+}
+.settings .security li {
+  width: 100%;
+  padding-left: 0;
+  float: none;
+  line-height: 3em;
+  border-bottom: 1px solid #ddd;
+}
+.settings .security .loginWithPayPal {
+  padding-bottom: 2px;
+}
+.settings .security .travelProfile {
+  height: 6.3em;
+}
+.settings ul.unstyled {
+  margin-bottom: 0;
+}
+.settings .section.top > .container:first-child {
+  margin-top: 0;
+}
+.settings .wallet .toggleBtnGroup {
+  text-align: center;
+}
+.settings .wallet .toggleBtnGroup .btn {
+  min-width: 100px;
+}
+.settings .wallet .instruments {
+  margin-top: 20px;
+}
+.settings .wallet .addFI {
+  display: block;
+  padding: 10px 0 70px;
+  margin: 30px auto 0;
+  width: 265px;
+  text-align: center;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  color: #999;
+  background: #eee;
+  font-size: 1.142857142857143em;
+  font-size: 1.25rem;
+  line-height: 1.05em;
+}
+.settings .wallet .addFI span {
+  margin-top: 10%;
+  display: block;
+  color: #999;
+}
+.settings .wallet .cards {
+  padding-top: 1em;
+  margin-left: 0;
+  text-align: left;
+}
+.settings .wallet .cards .disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.settings .wallet .cards li {
+  list-style: none;
+  border-top: 1px solid #eee;
+  background: url('https://www.paypalobjects.com/webstatic/sprite/sprite_logos_wallet_2x.png');
+  background-repeat: no-repeat;
+  background-position: 10px -492px;
+  /* Smart Connect */
+  /* eBay MasterCard */
+  /* PayPal Extras */
+}
+.settings .wallet .cards li.bank {
+  background: url("https://www.paypalobjects.com/webstatic/icon/generic-bank_2x.png") no-repeat;
+  background-size: 30px;
+  background-position: 17px 50%;
+}
+.settings .wallet .cards li[data-ctype="PAYPAL_CREDIT"] {
+  background-position: 21px 10px;
+  background-size: 47px;
+}
+.settings .wallet .cards li[data-ctype="VISA"] {
+  background-position: 10px -84px;
+}
+.settings .wallet .cards li[data-ctype="MCARD"] {
+  background-position: 10px -191px;
+}
+.settings .wallet .cards li[data-ctype="AMEX"] {
+  background-position: 13px -290px;
+}
+.settings .wallet .cards li[data-ctype="DISC"] {
+  background-position: 10px -587px;
+}
+.settings .wallet .cards li[data-ctype="BCVL"] {
+  background: url("https://www.paypalobjects.com/webstatic/logo/credit_products/PayPal_SmartConnect_292x183.png") no-repeat;
+  background-size: 30px;
+  background-position: 17px 50%;
+}
+.settings .wallet .cards li[data-ctype="DLEBAY"] {
+  background: url("https://www.paypalobjects.com/webstatic/logo/credit_products/eBay_mastercard_292x183.png") no-repeat;
+  background-size: 39px;
+  background-position: 11px 50%;
+}
+.settings .wallet .cards li[data-ctype="DLPUS"] {
+  background: url("https://www.paypalobjects.com/webstatic/logo/credit_products/PayPal_extras_292x183.png") no-repeat;
+  background-size: 39px;
+  background-position: 11px 50%;
+}
+.settings .wallet .cards li:last-child {
+  border-bottom: 1px solid #eee;
+}
+.settings .wallet .cards label {
+  display: block;
+  margin: 0;
+  padding: 10px 60px;
+  cursor: pointer;
+}
+.settings .wallet .cards input {
+  position: absolute;
+  opacity: 0;
+}
+.settings .wallet .cards .paypalCredit {
+  padding-left: 0;
+}
+.settings .wallet .cards .paypalCredit:before {
+  padding-left: 13px;
+  margin-top: 9px;
+  float: left;
+  font-size: 20px;
+}
+.settings .wallet .cards .bank {
+  background: none;
+}
+.settings .wallet .cards .bank label {
+  padding: 11px 0 11px 70px;
+}
+.settings .wallet .cards .unconfirmed {
+  margin-left: 70px;
+  padding-bottom: 11px;
+}
+.settings .wallet .cards .chooseCheckout {
+  background: none;
+}
+.settings .wallet .cards .chooseCheckout .icon-credit-card {
+  padding-right: 16px;
+  position: absolute;
+  top: 4px;
+  left: 37px;
+}
+.settings .wallet .cards .chooseCheckout .icon-credit-card:before {
+  font-size: 35px;
+}
+.settings .wallet .cards .credit-card-icon {
+  font-size: 36px;
+}
+.settings .wallet .cards .credit-card-icon:before {
+  float: left;
+  margin: -6px 0 0 6px;
+}
+.settings .wallet .cards li.checked {
+  border-top: 1px solid #A8D7E9;
+  border-bottom: 1px solid #A8D7E9;
+  background-color: #FAFDFE;
+}
+.settings .wallet .cards .icon-checkmark-small:before {
+  position: absolute;
+  right: 2%;
+  color: #0078C0;
+  font-size: 35px;
+}
+.settings .wallet .cards .cb {
+  position: relative;
+  margin: 0 5px;
+}
+.settings .wallet .balance {
+  margin: 30px 0 30px 15px;
+}
+.settings .wallet .balance .icon-info-large:before {
+  font-size: 25px;
+  font-weight: bold;
+  color: #666;
+}
+.settings .wallet .balance .icon-checkmark-small:before {
+  padding: 0.5px 3px 2.7px 4px;
+  margin-right: 7.5px;
+  color: #FFFFFF;
+  font-weight: bold;
+  background-color: #3ea134;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.settings .wallet .enableCard {
+  display: none;
+  text-align: center;
+  padding: 0 5%;
+}
+.settings .wallet .preapproved {
+  margin-top: 20px;
+}
+.settings .wallet .disclaimer a,
+.settings .wallet .preapproved a {
+  font-size: 1em;
+}
+.settings .wallet .disclaimer {
+  margin-top: 3em;
+}
+.settings .wallet .policy {
+  color: #666;
+}
+.settings .wallet .btn-group > .btn {
+  width: 50%;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: normal;
+  text-overflow: ellipsis;
+  background: #f8f8f8;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: #999;
+}
+.settings .wallet .btn-group > .btn.checked {
+  background: #0D62B3;
+  color: #FFFFFF;
+}
+.settings .wallet .amount {
+  text-align: right;
+}
+.settings .wallet .amount .status {
+  margin-left: 0.5em;
+  color: #3ea134;
+  font-weight: bold;
+}
+.profilePhotoParent:hover .new-user-icon:after {
+  position: absolute;
+  width: 87px;
+  height: 87px;
+  left: 0;
+  top: 0;
+  padding: 36px 0 0;
+  content: attr(data-hover-text);
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: bold;
+  font-family: sans-serif;
+  white-space: normal;
+  background: rgba(0, 0, 0, 0.3);
+}
+.profilePhotoContainer {
+  width: 83px;
+  height: 83px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  background: #37a6dd;
+}
+.profilePhotoContainer .profilePhotoParent {
+  position: relative;
+  display: block;
+}
+.profilePhotoContainer:hover {
+  cursor: default;
+}
+.profilePhotoContainer.hasFileReader:hover {
+  cursor: pointer;
+}
+.landscape .profilePhoto {
+  max-width: inherit;
+  max-height: 83px;
+  position: absolute;
+}
+.portrait .profilePhoto {
+  max-width: 83px;
+  position: absolute;
+}
+.square .profilePhoto {
+  max-height: 83px;
+}
+.innerCircle .icon {
+  overflow: hidden;
+  position: absolute;
+  height: 87px;
+  width: 87px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: #4cbbe8;
+}
+.innerCircle .icon:before {
+  display: block;
+  margin: 40px 0 0 -5px;
+  width: 110px;
+  font-size: 80px;
+  color: #0070BA;
+}
+/* overpanel */
+.theoverpanel .cb {
+  margin: 2em 0;
+}
+.theoverpanel .alertMsg:before {
+  top: 9px;
+  width: 25px;
+  height: 21px;
+}
+.theoverpanel .alertMsg p {
+  margin: 0 0 10px;
+}
+.theoverpanel .button {
+  margin: 2em 0;
+}
+.theoverpanel .textInput {
+  z-index: 1;
+}
+.theoverpanel .nativeDropdown.lap {
+  margin: 0;
+}
+.theoverpanel .nativeDropdown.lap.countryDropdown {
+  margin-bottom: 15px;
+}
+.theoverpanel .confirm-email,
+.theoverpanel .confirm-phone {
+  position: relative;
+}
+.theoverpanel .confirm-email .send,
+.theoverpanel .confirm-phone .send,
+.theoverpanel .confirm-email .done,
+.theoverpanel .confirm-phone .done {
+  display: none;
+}
+.theoverpanel .confirm-email .hasError + .confirm,
+.theoverpanel .confirm-phone .hasError + .confirm,
+.theoverpanel .confirm-email .hasError ~ .send,
+.theoverpanel .confirm-phone .hasError ~ .send,
+.theoverpanel .confirm-email .hasError ~ .done,
+.theoverpanel .confirm-phone .hasError ~ .done {
+  right: 42px;
+}
+.theoverpanel .confirm-email.confirm .confirm,
+.theoverpanel .confirm-phone.confirm .confirm {
+  opacity: 1;
+  z-index: 1;
+}
+.theoverpanel .confirm-email.active .confirm,
+.theoverpanel .confirm-phone.active .confirm,
+.theoverpanel .confirm-email.active .send,
+.theoverpanel .confirm-phone.active .send,
+.theoverpanel .confirm-email.active .done,
+.theoverpanel .confirm-phone.active .done {
+  right: 15px;
+  top: 12px;
+  position: absolute;
+  opacity: 0;
+  display: block;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+.theoverpanel .confirm-email.active.confirm .confirm,
+.theoverpanel .confirm-phone.active.confirm .confirm {
+  opacity: 1;
+  z-index: 1;
+}
+.theoverpanel .confirm-email.active.send .confirm,
+.theoverpanel .confirm-phone.active.send .confirm {
+  opacity: 0;
+}
+.theoverpanel .confirm-email.active.send .send,
+.theoverpanel .confirm-phone.active.send .send {
+  -webkit-animation: fadeInOutDelay 6s 0 forwards;
+  -moz-animation: fadeInOutDelay 6s 0 forwards;
+  -ms-animation: fadeInOutDelay 6s 0 forwards;
+  animation: fadeInOutDelay 6s 0 forwards;
+}
+.theoverpanel .confirm-email.active.send .done,
+.theoverpanel .confirm-phone.active.send .done {
+  -webkit-animation: fadeIn 2s 5s forwards;
+  -moz-animation: fadeIn 2s 5s forwards;
+  -ms-animation: fadeIn 2s 5s forwards;
+  animation: fadeIn 2s 5s forwards;
+}
+.theoverpanel .success.icon-checkmark-small {
+  margin: 15% 0 30px;
+  text-align: center;
+}
+.theoverpanel .success.icon-checkmark-small:before {
+  padding: 10px 9px;
+  color: #3ea134;
+}
+.theoverpanel .consent,
+.notifications .consent {
+  height: 200px;
+  margin-bottom: 2em;
+  background-color: #eee;
+  overflow-y: scroll;
+}
+.theoverpanel .agreeConsent li,
+.notifications .agreeConsent li {
+  line-height: 200%;
+}
+.theoverpanel .cbName,
+.notifications .cbName {
+  margin-top: 6px;
+}
+.sidepanelContainer {
+  background-color: #000;
+  color: white;
+}
+.sidepanelContainer .content {
+  padding: 15px;
+  height: 85%;
+  overflow: scroll;
+}
+.sidepanelContainer ul {
+  margin-left: 0;
+}
+.sidepanelContainer ul li {
+  padding: 25px 25px;
+  color: #999;
+  border-bottom: 1px solid #444;
+  list-style: none;
+}
+.sidepanelContainer ul li.primary {
+  color: white;
+  background-color: #0666B3;
+}
+.sidepanelContainer ul li .icon-checkmark-small:before {
+  float: right;
+  right: 20px;
+  margin-top: 5px;
+}
+.sidepanelContainer .emailFormat {
+  padding: 25px;
+}
+.sidepanelContainer .emailFormat label {
+  color: white;
+}
+.sidepanelContainer .emailFormat label.html {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.sidepanelContainer .emailFormat label.text {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.sidepanelContainer .emailFormat p {
+  font-weight: bold;
+}
+.sidepanelContainer .type {
+  display: inline-block;
+  padding: 10px 25px;
+  cursor: pointer;
+  color: #666;
+  background-color: #444;
+}
+.sidepanelContainer .type.checked {
+  background-color: #0666B3;
+}
+.mobileDevices-notFound {
+  margin-top: 2em;
+}
+.mobileDevices {
+  width: 100%;
+  margin-top: 30px;
+}
+.mobileDevices .mobileDevices-name {
+  width: 60%;
+}
+.mobileDevices .mobileDevices-type {
+  width: 20%;
+}
+.mobileDevices .mobileDevices-name,
+.mobileDevices .mobileDevices-type {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mobileDevices .mobileDevices-action {
+  width: 20%;
+}
+.mobileDevices .icon-delete-small {
+  float: left;
+  margin-top: 9px;
+  color: #6C7378;
+}
+.alertMsg:before {
+  top: 8px;
+}
+.nameChange {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 600px;
+}
+.nameChange .nameChangeOptionsForm {
+  margin-left: 50px;
+  margin-right: auto;
+  text-align: left;
+}
+.nameChange .backButton {
+  margin-left: 50px;
+  margin-right: auto;
+  text-align: left;
+}
+.nameChange .backButton {
+  margin-left: 50px;
+  margin-right: auto;
+  text-align: left;
+}
+.nameChange .btns {
+  margin-top: 20px;
+}
+.nameChange .continueBtn {
+  min-width: 150px;
+}
+.nameChange .backBtn {
+  min-width: 150px;
+  margin-left: 20px;
+}
+.sendFiles .invalidField {
+  color: #b32317;
+}
+.sendFiles .validField {
+  color: #000000;
+}
+.sendFiles .sendFiles-table {
+  display: table;
+  width: 500px;
+}
+.sendFiles .sendFiles-tableRow {
+  display: table-row;
+}
+.sendFiles .sendFiles-tableLeftCell {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+}
+.sendFiles .sendFiles-tableRightCell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.sendFiles .sendFiles-inputWidth {
+  width: 290px;
+}
+.sendFiles .sendFiles-selectFile {
+  padding: 9px;
+  line-height: 10px;
+}
+.sendFiles input#selectFile {
+  padding: 9px;
+  line-height: 10px;
+}
+.sendFiles .filesTable {
+  display: table;
+  width: 695px;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+}
+.sendFiles .filesTable-cell {
+  display: table-cell;
+  border: 1px solid #555555;
+  text-align: center;
+  word-wrap: break-word;
+}
+.sendFiles .strong {
+  font-weight: bold;
+}
+.sendFiles .sendFiles-filesTable td {
+  text-align: center;
+}
+.sendFiles .sendFiles-note {
+  margin-bottom: 0px;
+  height: 50px;
+}
+.sendFiles .sendFiles-submitBtn {
+  margin-left: 240px;
+  margin-top: 20px;
+  min-width: 100px;
+  text-align: center;
+}
+.sendFiles #fileType {
+  max-width: 100%;
+  padding-right: 30px;
+}
+.faxCover input[type="text"] {
+  height: 26px;
+  padding: 0px 6px;
+}
+.faxCover .signatureLine {
+  border-top: 1px solid #000000;
+  width: 250px;
+  margin-left: 130px;
+  margin-top: -10px;
+}
+.faxCover .comments {
+  height: 100px;
+  width: 670px;
+}
+.faxCover .table {
+  display: table;
+  min-width: 700px;
+}
+.faxCover .table-row {
+  display: table-row;
+}
+.faxCover .table-leftLabelCell {
+  display: table-cell;
+  text-align: right;
+  min-width: 60px;
+  white-space: nowrap;
+}
+.faxCover .table-rightLabelCell {
+  display: table-cell;
+  text-align: right;
+  min-width: 120px;
+  white-space: nowrap;
+}
+.faxCover .table-contentCell {
+  display: table-cell;
+  text-align: left;
+  min-width: 200px;
+  white-space: nowrap;
+  padding-left: 10px;
+}
+.faxCover .leftTableDataLength {
+  width: 150px;
+}
+.faxCover .rightTableDataLength {
+  width: 230px;
+}
+.faxCover .emailLength {
+  width: 90px;
+}
+.faxCover .labelLength {
+  width: 60px;
+}
+.feedbackMsg {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.feedbackMsg .feedbackMsg-success-icon {
+  margin-top: 40px;
+  color: #1b9e1b;
+}
+.feedbackMsg .feedbackMsg-text {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+.feedbackMsg .feedbackMsg-done {
+  margin-top: 100px;
+}
+.nameChangeCenter {
+  text-align: center;
+}
+.nameChangeAlignLeft {
+  margin-left: 20px;
+}
+.nameChangeAlignTop {
+  margin-top: 20px;
+}
+.nameChangeBtn {
+  min-width: 10px;
+}
+.options {
+  background: none;
+  max-width: 710px;
+}
+.options .optionsDropdown,
+.options .selectDropdown {
+  margin-top: 1px;
+}
+.options ul.lined li {
+  padding-top: 0;
+  line-height: 3.5em;
+}
+.options .type,
+.options .languageLabel,
+.options .timezoneLabel,
+.options .taxIdValue,
+.options .merchantIdValue,
+.options .links {
+  line-height: 3.5em;
+}
+.options .options-row > p,
+.options .options-row > a {
+  display: block;
+}
+.profile {
+  max-width: 650px;
+}
+.profile .label {
+  font-weight: 600;
+}
+.warning-icon {
+  margin-top: 10px;
+  font-weight: 800;
+  color: orange;
+}
+#stateChangeWarningDiv {
+  display: none;
+  margin-top: 2em;
+}
+.edit_address_submit_button {
+  margin-top: 2em !important;
+}
+.button_radius {
+  border-radius: 30px;
+}
+.widget_card {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+  color: #07467A;
+  background: #eeeeee;
+  font-size: 20px;
+  width: 225px;
+  height: 140px;
+  padding: 7px;
+  border: 0 none;
+  overflow-x: hidden;
+  overflow-y: visible;
+  position: relative;
+  font-weight: 300;
+  text-decoration: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  /* card color diagonal gradients */
+}
+.widget_card:hover,
+.widget_card:focus,
+.widget_card:active {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #07467A;
+  text-decoration: none;
+}
+.widget_card.creditOrDebit {
+  color: #FFFFFF;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.widget_card.gray {
+  background-color: #7f7f7f;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #555555, #898989 50%, #555555);
+  background-image: -webkit-linear-gradient(135deg, #555555, #898989 50%, #555555);
+  background-image: -o-linear-gradient(135deg, #555555, #898989 50%, #555555);
+  background-image: linear-gradient(135deg, #555555, #898989 50%, #555555);
+}
+.widget_card.black {
+  background-color: #474a4c;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #2c2e2f, #4e5153 50%, #2c2e2f);
+  background-image: -webkit-linear-gradient(135deg, #2c2e2f, #4e5153 50%, #2c2e2f);
+  background-image: -o-linear-gradient(135deg, #2c2e2f, #4e5153 50%, #2c2e2f);
+  background-image: linear-gradient(135deg, #2c2e2f, #4e5153 50%, #2c2e2f);
+}
+.widget_card.blue {
+  background-color: #306793;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #07467A, #3A6F99 50%, #07467A);
+  background-image: -webkit-linear-gradient(135deg, #07467A, #3A6F99 50%, #07467A);
+  background-image: -o-linear-gradient(135deg, #07467A, #3A6F99 50%, #07467A);
+  background-image: linear-gradient(135deg, #07467A, #3A6F99 50%, #07467A);
+}
+.widget_card.red {
+  background-color: #c95151;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #BA1717, #CD6060 50%, #BA1717);
+  background-image: -webkit-linear-gradient(135deg, #BA1717, #CD6060 50%, #BA1717);
+  background-image: -o-linear-gradient(135deg, #BA1717, #CD6060 50%, #BA1717);
+  background-image: linear-gradient(135deg, #BA1717, #CD6060 50%, #BA1717);
+}
+.widget_card.gold {
+  background-color: #d0a157;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #C88723, #D2A764 50%, #C88723);
+  background-image: -webkit-linear-gradient(135deg, #C88723, #D2A764 50%, #C88723);
+  background-image: -o-linear-gradient(135deg, #C88723, #D2A764 50%, #C88723);
+  background-image: linear-gradient(135deg, #C88723, #D2A764 50%, #C88723);
+}
+.widget_card.green {
+  background-color: #4f9c50;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(135deg, #317B31, #57A458 50%, #317B31);
+  background-image: -webkit-linear-gradient(135deg, #317B31, #57A458 50%, #317B31);
+  background-image: -o-linear-gradient(135deg, #317B31, #57A458 50%, #317B31);
+  background-image: linear-gradient(135deg, #317B31, #57A458 50%, #317B31);
+}
+.widget_card.paypalBalanceCard {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 3px solid #c5c5c5;
+  text-align: center;
+}
+.widget_card.paypalBalanceCard .logo {
+  margin-top: 56px;
+}
+.widget_card h3 {
+  color: #FFFFFF;
+}
+#email-settings {
+  /**
+ * @fileOverview Styles for settings (responsive)
+ * @name responsive-settings
+ * @author novalina
+ * @tested Chrome, FF, IE, Safari, iOS
+ */
+  /* tablets - portrait */
+}
+@media (max-width: 1024px) {
+  #email-settings .nav ul {
+    padding-left: 15px;
+  }
+  #email-settings .links a {
+    display: inline-block;
+  }
+  #email-settings .links .icon {
+    display: block;
+  }
+  #email-settings .add .icon,
+  #email-settings .edit .icon {
+    background: url("https://www.paypalobjects.com/webstatic/sprite/sprite_settings_glyphs.png") no-repeat 0 0;
+    width: 19px;
+    height: 21px;
+  }
+  #email-settings .delete .icon {
+    background: url("https://www.paypalobjects.com/webstatic/sprite/sprite_settings_glyphs.png") no-repeat 0 -69px;
+    width: 17px;
+    height: 22px;
+  }
+  #email-settings .confirm .icon:before {
+    content: "\e519";
+    float: left;
+    margin-top: -12px;
+    color: #555555;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+@media (max-width: 768px) {
+  #email-settings .settings .nav ul {
+    padding-left: 9px;
+  }
+  #email-settings .settings .nav li {
+    padding: 0 9px;
+    text-align: center;
+  }
+  #email-settings .settings .container {
+    padding: 1.5em 1.5em;
+  }
+  #email-settings .settings .container p.modify {
+    bottom: 0;
+  }
+  #email-settings .settings .profileBanner {
+    padding-left: 5px;
+  }
+  #email-settings .settings .profileBanner .nameWrapper span {
+    font-size: 1.3714285714285714em;
+    font-size: 1.5rem;
+    line-height: 0.875em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #email-settings .settings .profileBanner .edit {
+    display: none;
+  }
+  #email-settings .settings .profileBanner .hover {
+    display: inline-block;
+    opacity: 1;
+  }
+  #email-settings .settings .innerCircle {
+    margin-right: 10px;
+  }
+  #email-settings .settings .setPrimary {
+    display: none;
+  }
+  #email-settings .settings .addresses .modify .delete {
+    border-right: none;
+  }
+  #email-settings .settings .section {
+    width: 100%;
+    margin-left: 0;
+  }
+  #email-settings .settings .panel {
+    margin: 0;
+  }
+  #email-settings .settings .notifications .header {
+    margin-top: 20px;
+  }
+  #email-settings .settings .emailList,
+  #email-settings .settings .phoneList {
+    width: 100%;
+  }
+  #email-settings .settings .emailList .icon-email {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  #email-settings .settings .emailList .icon-email:before {
+    margin-top: 17px;
+  }
+  #email-settings .settings h2.x-large {
+    font-size: 1.3714285714285714em;
+    font-size: 1.5rem;
+    line-height: 0.875em;
+  }
+  #email-settings .theoverpanel {
+    padding: 8% 1%;
+  }
+  #email-settings .theoverpanel p {
+    margin: 1em 0;
+  }
+  #email-settings .theoverpanel .active.confirm-email .confirm,
+  #email-settings .theoverpanel .active.confirm-email .send,
+  #email-settings .theoverpanel .active.confirm-email .done {
+    left: 11px;
+    top: 70px;
+  }
+  #email-settings .theoverpanel .changeEmail {
+    margin-top: 40px;
+  }
+}
+/* Login with paypal styles */
+form .invalid {
+  border-color: red;
+}
+#lippPage #lippWrapper .container {
+  margin-top: 0;
+  padding-top: 0;
+}
+#lippPage .lippSection {
+  background: none;
+  max-width: 1170px;
+}
+#lippPage .lippSection .lippheader {
+  font-weight: 600;
+}
+#lippPage .lippSection .lippDesc {
+  margin-bottom: 25px;
+}
+#lippPage ul.lined li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  cursor: default;
+}
+#lippPage ul.lined li:first-child {
+  padding-top: 0;
+}
+#lippPage ul.lined li:last-child {
+  border: none;
+}
+#lippPage ul.lined li .links {
+  cursor: pointer;
+}
+#lippPage .container .links {
+  text-align: right;
+}
+#lippPage .container .links {
+  text-align: right;
+  padding-right: 0px;
+}
+#lippPage .container .links a {
+  padding: 0 0.5em;
+  border-right: 1px solid #2c2e2f;
+}
+#lippPage .container .links a:first-child {
+  padding-left: 0;
+}
+#lippPage .container .links a:last-child {
+  border: none;
+}
+/* Revoke by device CSS */
+.devices h3 {
+  font-size: 32px;
+  margin-bottom: 0.5em;
+}
+.devices .devices-body {
+  margin-top: 2em;
+}
+.devices .devices-body a.btn {
+  min-width: auto;
+}
+.devices .devices-body .all-devices .logged-in-label div {
+  font-weight: bold;
+  text-align: center;
+}
+.devices .devices-body .all-devices .row {
+  border-bottom: 1px solid #ddd;
+  line-height: 3em;
+}
+@media (max-width: 768px) {
+  .devices .devices-body .all-devices .row {
+    line-height: 2em;
+  }
+}
+.devices .devices-body .del-all {
+  line-height: 3em;
+  margin-top: 1em;
+}
+.devices .devices-body .button {
+  margin-top: 1em;
+}
+.devices .devices-body .button a {
+  min-width: 200px;
+}
+/* Revoke by nfcdevice CSS */
+.nfcdevices ul.all-nfcdevices li {
+  line-height: 1.8em;
+}
+.nfcdevices ul.all-nfcdevices li:first-child {
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+.nfcdevices ul.all-nfcdevices li:last-child {
+  border-bottom: 1px solid #ddd;
+}
+.nfcdevices ul.all-nfcdevices li .links {
+  text-align: right;
+}
+.nfcdevices p.desc {
+  margin-bottom: 25px;
+}
+.nfcdevices .done {
+  margin-bottom: 20px;
+}

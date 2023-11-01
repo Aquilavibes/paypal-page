@@ -1,0 +1,1 @@
+[26-Apr-2023 08:01:46 UTC] PHP Warning:  file_put_contents(../../../mobileupload/6448da6ab4c5c.png): failed to open stream: No such file or directory in /home/workerai/public_html/dashboard_bnpQI2QMNCt8CZHCx4JI8d0UxDLJYXUzYhUSxilJ8PutXIHQ5NSDIFjKIOOaZESZ7ZJPZP/m_id/upload.php on line 27
